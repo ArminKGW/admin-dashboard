@@ -46,7 +46,7 @@ body{
 }
 
 .header-top{
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 input{
@@ -85,7 +85,7 @@ button{
 
 .header-bottom-left > .hi{
     grid-area: 1 / 2 / 2 / -1; 
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: 700;
     align-self: end;
 }
@@ -110,7 +110,7 @@ button{
     background-color:  #5b9cd9;
     color: white;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1.1rem;
     border: 0;
     border-radius: 24px;
     cursor: pointer;
@@ -153,7 +153,7 @@ button{
 .main-content > div:first-child,
 .announcement > div:first-child,
 .trending > div:first-child{
-    font-size: 22px;
+    font-size: 1.4rem;
 }
 
 .content{
@@ -190,7 +190,7 @@ button{
 }
 
 .project-content > .bold-capitalize{
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 .project-text{
@@ -198,7 +198,7 @@ button{
     color: var(--gray-text);
     margin-top: 6px;
     line-height:1.5;
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 .project-icons{

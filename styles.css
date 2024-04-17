@@ -55,6 +55,7 @@ input{
     border-radius: 24px;
     background-color: var(--bg-color);
     margin-left: 22px;
+    padding: 1px 8px;
 }
 
 input:hover{
@@ -115,9 +116,11 @@ button{
 }
 
 .sidebar{
-    grid-area: 1 / 1 / -1 / 2;
     background-color: #579ce1;
     color: white;
+    position: fixed;
+    width: 381px;
+    height: 100%;
 }
 
 .top div,
@@ -157,23 +160,18 @@ button{
     display: grid;
     grid-template: 1fr / 3fr 1fr;
     margin: 36px 24px;
+    gap: 24px;
 }
 
 .main-content{
     grid-area: 1 / 1 / -1 / -2;
     display: grid;
-    grid-template: min-content repeat(3, 1fr) / repeat(2, minmax(300px, 1fr));
+    grid-template: min-content repeat(3, min(300px)) / repeat(2, minmax(300px, 1fr));
     gap: 24px;
 }
 
 .main-content > .bold-capitalize{
     grid-column: span 2;
-}
-
-.project-content{
-    display: grid;
-    grid-template-rows: min-content 1fr 50px;
-    padding: 32px 16px;
 }
 
 .project{
@@ -183,10 +181,18 @@ button{
     box-shadow: var(--project-shadow);
 }
 
-.text{
+.project-content{
+    height: 80%;
+    display: grid;
+    grid-template-rows: min-content 1fr 50px;
+    padding: 32px 16px;
+}
+
+.project-text{
     grid-row: 2 / 3;
-    color: gray;
+    color: rgb(96, 94, 94);
     margin-top: 6px;
+    line-height:1.5;
 }
 
 .project-icons{
@@ -195,6 +201,38 @@ button{
     justify-content: flex-end;
     align-items: flex-end;
     gap: 24px;
+}
+
+.side-content{
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+}
+
+.announcement{
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: 24px;
+}
+
+.announcement-container{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: var(--semi-white);
+    border-radius: 12px;
+    padding: 36px 30px 12px 30px;
+    box-shadow: var(--project-shadow);
+}
+
+.announcement-container > :not(div:first-child){
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    border-top: 1px solid rgb(162, 159, 159);
+    padding-top: 12px;
+}
+
+.announcement-text{
+    margin-top: 6px;
+    color: rgb(96, 94, 94);
 }
 
 svg{

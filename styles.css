@@ -2,7 +2,8 @@
     --bg-color: #e7eef3;
     --semi-white: rgb(247, 244, 244);
     --header-shadow: 0px 4px 6px 0px #B9C2C9;
-    --project-shadow: 3px 4px 6px 0px #B9C2C9;
+    --content-shadow: 3px 4px 6px 0px #B9C2C9;
+    --gray-text: rgb(96, 94, 94);
 }
 
 body{
@@ -166,7 +167,7 @@ button{
 .main-content{
     grid-area: 1 / 1 / -1 / -2;
     display: grid;
-    grid-template: min-content repeat(3, min(300px)) / repeat(2, minmax(300px, 1fr));
+    grid-template: min-content repeat(3, min(350px)) / repeat(2, minmax(300px, 1fr));
     gap: 24px;
 }
 
@@ -178,7 +179,7 @@ button{
     background-color: var(--semi-white);
     border-left: 12px solid rgb(230, 190, 11);
     border-radius: 6px;
-    box-shadow: var(--project-shadow);
+    box-shadow: var(--content-shadow);
 }
 
 .project-content{
@@ -188,11 +189,16 @@ button{
     padding: 32px 16px;
 }
 
+.project-content > .bold-capitalize{
+    font-size: 20px;
+}
+
 .project-text{
     grid-row: 2 / 3;
-    color: rgb(96, 94, 94);
+    color: var(--gray-text);
     margin-top: 6px;
     line-height:1.5;
+    font-size: 18px;
 }
 
 .project-icons{
@@ -209,9 +215,11 @@ button{
 }
 
 .announcement{
+    grid-row: 1; 
     display: grid;
     grid-template-rows: min-content 1fr;
     gap: 24px;
+    margin-bottom: 24px;
 }
 
 .announcement-container{
@@ -220,7 +228,7 @@ button{
     background-color: var(--semi-white);
     border-radius: 12px;
     padding: 36px 30px 12px 30px;
-    box-shadow: var(--project-shadow);
+    box-shadow: var(--content-shadow);
 }
 
 .announcement-container > :not(div:first-child){
@@ -232,7 +240,43 @@ button{
 
 .announcement-text{
     margin-top: 6px;
-    color: rgb(96, 94, 94);
+    color: var(--gray-text);
+}
+
+.trending{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: 24px;
+}
+
+.trending-container{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: var(--semi-white);
+    border-radius: 12px;
+    padding: 18px 30px;
+    box-shadow: var(--content-shadow);
+}
+
+.trending-container > *{
+    display: grid;
+    grid-template: repeat(2, 30px) / 60px 1fr;
+    column-gap: 24px;
+    align-content: center;
+}
+
+.trending-container img{
+    grid-area: 1 / 1 / -1 / 2;
+}
+
+.after-img-up{
+    font-weight: bold;
+    align-self: end;
+}
+
+.after-img-down{
+    color: var(--gray-text);
 }
 
 svg{

@@ -1,6 +1,8 @@
 :root{
     --bg-color: #e7eef3;
-    --shadow: 0px 4px 6px 0px #B9C2C9;
+    --semi-white: rgb(247, 244, 244);
+    --header-shadow: 0px 4px 6px 0px #B9C2C9;
+    --project-shadow: 3px 4px 6px 0px #B9C2C9;
 }
 
 body{
@@ -11,7 +13,7 @@ body{
 
 .container{
     display: grid;
-    grid-template: 1.5fr 5fr / 1fr 4fr;
+    grid-template: 1fr 5fr / 1fr 4fr;
     height: 100vh;
 }
 
@@ -20,7 +22,8 @@ body{
     display: grid;
     grid-template-rows: 1fr 1.5fr;
     padding: 16px 36px 12px 48px;
-    box-shadow: var(--shadow);
+    background-color: var(--semi-white);
+    box-shadow: var(--header-shadow);
     z-index: 1;
 }
 
@@ -138,9 +141,60 @@ button{
     cursor: auto;
 }
 
-.content{
+.box{
     grid-area: 2 / 2 / -1 / -1;
     background-color: #dde2e7;
+}
+
+.main-content > div:first-child,
+.announcement > div:first-child,
+.trending > div:first-child{
+    font-size: 22px;
+}
+
+.content{
+    height: 90%;
+    display: grid;
+    grid-template: 1fr / 3fr 1fr;
+    margin: 36px 24px;
+}
+
+.main-content{
+    grid-area: 1 / 1 / -1 / -2;
+    display: grid;
+    grid-template: min-content repeat(3, 1fr) / repeat(2, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.main-content > .bold-capitalize{
+    grid-column: span 2;
+}
+
+.project-content{
+    display: grid;
+    grid-template-rows: min-content 1fr 50px;
+    padding: 32px 16px;
+}
+
+.project{
+    background-color: var(--semi-white);
+    border-left: 12px solid rgb(230, 190, 11);
+    border-radius: 6px;
+    box-shadow: var(--project-shadow);
+}
+
+.text{
+    grid-row: 2 / 3;
+    color: gray;
+    margin-top: 6px;
+}
+
+.project-icons{
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 24px;
 }
 
 svg{

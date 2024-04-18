@@ -15,7 +15,7 @@ body{
 .container{
     display: grid;
     grid-template: 1fr 5fr / 1fr 4fr;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .header{
@@ -117,11 +117,14 @@ button{
 }
 
 .sidebar{
+    height: 100vh;
+    grid-area: 1 / 1 / -1 / 2;
     background-color: #579ce1;
     color: white;
-    position: fixed;
-    width: 381px;
-    height: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    align-self: start;
 }
 
 .top div,
@@ -167,12 +170,13 @@ button{
 .main-content{
     grid-area: 1 / 1 / -1 / -2;
     display: grid;
-    grid-template: min-content repeat(3, min(350px)) / repeat(2, minmax(300px, 1fr));
+    grid-template: min-content repeat(3, 1fr) / repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
 }
 
 .main-content > .bold-capitalize{
-    grid-column: span 2;
+    grid-row: 1;
+    grid-column: 1 / -1;
 }
 
 .project{
